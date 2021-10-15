@@ -1,0 +1,13 @@
+-Uma vez configurado, você pode adicionar arquivos, criar commits e subir seus commits para o repositório GitHub.
+-Você pode ver quais foram e não foram adicionados ao repositório local usando o comando:
+$git status
+-Para adicionar arquivos você pode usar o comando:
+$git add 'arquivo sem aspas' - (adiciona um arquivo específico)
+ou
+$git add .                   - (adiciona todos os arquivos da pasta)
+-Depois de adicionados todos os arquivos, você pode criar um commit usando o comando:
+$git commit -m 'Nome do commit sem aspas'
+-Quando tiver feito commit dos arquivos rastreados, você pode subir para o github usando o comando:
+$git push -u origin master
+(Lembre-se: 'origin' se refere ao nome que demos ao repositório do github quando o adicionamos. 'master' é o nome da nossa branch (linha do tempo) principal).
+-Agora você criou um commit e subiu ele para o GitHub e seus colegas podem acessá-lo.

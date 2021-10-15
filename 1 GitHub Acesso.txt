@@ -1,0 +1,15 @@
+Link do Repositório: https://github.com/Grupo40821/projetoIntegrador.git
+
+Como usar o Git?
+Iniciando um projeto:
+-Abra o GitBash (terminal do git)
+-Acesse o diretório onde irá iniciar o projeto usando o comando:
+$ cd (diretório do projeto)
+-Inicie o projeto git usando o comando:
+$ git init
+-Defina seu nome de usuário e seu e-mail que estão cadastrados na sua conta GitHub usando os comandos
+$git config user.name 'nome de usuário entre aspas'
+$git config user.email 'email do github entre aspas'
+-Defina qual diretório GitHub você quer procurar e subir seus commits com o comando:
+$git remote add origin 'link do repositório sem aspas'
+-Seu git está configurado.
