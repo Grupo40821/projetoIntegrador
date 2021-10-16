@@ -2,6 +2,7 @@ body{
     margin: 0%;
     background-image: url(Imagens/fundo.jpg);
     background-size: cover;
+    background-attachment: fixed;
 }
 
 nav{
