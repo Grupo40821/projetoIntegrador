@@ -1,54 +1,44 @@
-body {
-    margin: 0px;
-    font-family: Arial;
+body{
+    margin: 0%;
     background-image: url(Imagens/fundo.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
 }
-#abaSuperior {
-    height: 75px;
+
+nav{
+    background-color: #1515d362;
     width: 100%;
-    background-color: rgba(0,0,0,0.5);
-    border: inset;
-    border-color: rgba(0,0,0,1);
-    border-radius: 5px;
-    text-align: center;
-    font-size: 18;
+    height: 50px;
+    border-bottom: solid 2px #0d0d8062;
+    display: flex;
+    align-items: center;
+    position: fixed;
+}
+
+.logo{
+    background-image: url(Imagens/logo.png);
+    background-size: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+nav ul{
+    list-style: none;
+    display: inline-flex;
+    position: absolute;
+    right: 0px;
+}
+
+nav li a{
+    padding: 16.5px;
+    justify-content: center;
+}
+.menu{
+    text-decoration: none;
     color: white;
 }
-#logo {
-    height: 50px;
-    width: 300px;
-    background-image: url(imagens/logo.jpg);
-    position: relative;
-    top: 12.5;
-    left: 12.5;
-}
-#login {
-    height: 20px;
-    width: 50px;
-    position:absolute;
-    top: 27.5;
-    right: 27.5;
-}
-#servicos {
-    height: 20px;
-    width: 70px;
-    position: absolute;
-    top: 27.5;
-    right: 105;
-}
-#quemSomos {
-    height: 20px;
-    width: 125px;
-    position: absolute;
-    top: 27.5;
-    right: 202.5;
-}
-#home {
-    height: 20px;
-    width: 50px;
-    position: absolute;
-    top: 27.5;
-    right: 355;
+
+nav .menu:hover{
+    transition: 0.5;
+    background-color:#e4e4e4;
+    color: black;
 }
