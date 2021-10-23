@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça seu login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="cont">
+        <div class="form sign-in">
+            <h2>Seja bem-vindo</h2>
+            <label for="">
+                <span>E-mail</span>
+                <input type="email">
+            </label>
+
+            <label for="">
+                <span>Senha</span>
+                <input type="password">
+            </label>
+
+            <p class="forgot-pass"><a href="#">Esqueceu sua senha?</a></p>
+            <button type="button" class="submit">Entrar</button>
+            <button type="button" class="fb-btn">Acesse com <span>Facebook</span></button>
+        </div>
+
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img__text m--up">
+                    <h2>Novo aqui?</h2>
+                    <p>Acesse, e descubra as novas oportunidades que temos para você. Inscreva-se no botão abaixo!</p>
+                </div>
+
+                <div class="img__text m--in">
+                    <h2>Já é um dos nossos?</h2>
+                    <p>Se já tem uma conta, apenas acesse o botão abaixo e entre com seu e-mail e senha</p>
+                </div>
+
+                <div class="img__btn">
+                    <span class="m--up">Cadastrar</span>
+                    <span class="m--in">Entrar</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                <h2>Sinta-se em casa</h2>
+                <label for="">
+                    <span>Nome</span>
+                    <input type="text">
+                </label>
+                
+                <label for="">
+                    <span>Email</span>
+                    <input type="email">
+                </label>
+
+                <label for="">
+                    <span>Senha</span>
+                    <input type="password">
+                </label>
+                
+                <label class="tipo">
+                    <input type="radio" name="tipo" value="usuario">Usuário
+                    <input type="radio" name="tipo" value="usuario">Motorista
+                </label>
+
+                <button type="button" class="submit">Cadastrar</button>
+                <button type="button" class="fb-btn">Entre com <span>Facebook</span></button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.querySelector('.img__btn').addEventListener('click', function(){
+            document.querySelector('.cont').classList.toggle('s--signup');
+        });
+    </script>
+
+</body>
+</html>
