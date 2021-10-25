@@ -43,6 +43,7 @@
                     <span class="m--in">Entrar</span>
                 </div>
             </div>
+
             <div class="form sign-up">
                 <h2>Sinta-se em casa</h2>
                 <label for="">
@@ -61,12 +62,64 @@
                 </label>
                 
                 <label class="tipo">
-                    <input type="radio" name="tipo" value="usuario">Usuário
-                    <input type="radio" name="tipo" value="usuario">Motorista
+                    <input type="radio" name="tipo" value="usuario" class='user'>Usuário
+                    <input type="radio" name="tipo" value="usuario" class='driver'>Motorista
                 </label>
 
-                <button type="button" class="submit">Cadastrar</button>
+                <button type="button" class="submit" id='sign-up'>Cadastrar</button>
                 <button type="button" class="fb-btn">Entre com <span>Facebook</span></button>
+            </div>
+
+            <div class="form sign-up-info">
+                <h2>Sinta-se em casa</h2>
+                <label for="">
+                    <span>Telefone</span>
+                    <input type="tel">
+                </label>
+                
+                <label for="">
+                    <span>CPF</span>
+                    <input type="text">
+                </label>
+
+                <label for="">
+                    <span>Documento de Identificação</span>
+                    <input type="text">
+                </label>
+
+                <label for="attachment" class='attachment-label'>
+                    <span>Anexar documento</span>
+                    <input type="file" id='attachment'>
+                </label>
+
+                <button type="button" class="submit" id='sign-up-info'>Avançar</button>
+                <button type="button" class="fb-btn" id='sign-up-back'>Voltar</button>
+            </div>
+
+            <div class="form sign-up-info-second">
+                <h2>Sinta-se em casa</h2>
+                <label for="">
+                    <span>Cidade</span>
+                    <input type="text">
+                </label>
+                
+                <label for="">
+                    <span>Estado</span>
+                    <input type="text">
+                </label>
+
+                <label for="">
+                    <span>Estado Civil</span>
+                    <input type="text">
+                </label>
+
+                <label for='' class='checkbox-container'>
+                <input type="checkbox" class="checkbox">
+                <span>Eu li e aceito os <a href='#' class='terms'>Termos de Uso</a> da plataforma.</span>
+                </label>
+
+                <button type="button" class="submit" id='sign-up-info-second'>Avançar</button>
+                <button type="button" class="fb-btn" id='sign-up-back-second'>Voltar</button>
             </div>
         </div>
     </div>
@@ -75,6 +128,30 @@
         document.querySelector('.img__btn').addEventListener('click', function(){
             document.querySelector('.cont').classList.toggle('s--signup');
         });
+        document.querySelector('#sign-up').addEventListener('click',function(){
+            document.querySelector('.sign-up-info').classList.toggle('fade-in2');
+        })
+        document.querySelector('#sign-up').addEventListener('click',function(){
+            document.querySelector('.sign-up').classList.toggle('fade-in');
+        })
+        document.querySelector('#sign-up-back').addEventListener('click',function(){
+            document.querySelector('.sign-up-info').classList.toggle('fade-in2');
+        })
+        document.querySelector('#sign-up-back').addEventListener('click',function(){
+            document.querySelector('.sign-up').classList.toggle('fade-in');
+        })
+        document.querySelector('#sign-up-info').addEventListener('click',function(){
+            document.querySelector('.sign-up-info-second').classList.toggle('fade-in3');
+        })
+        document.querySelector('#sign-up-info').addEventListener('click',function(){
+            document.querySelector('.sign-up-info.fade-in2').classList.toggle('fade-in4');
+        })
+        document.querySelector('#sign-up-back-second').addEventListener('click',function(){
+            document.querySelector('.sign-up-info-second').classList.toggle('fade-in3');
+        })
+        document.querySelector('#sign-up-back-second').addEventListener('click',function(){
+            document.querySelector('.sign-up-info').classList.toggle('fade-in4');
+        })
     </script>
 
 </body>
