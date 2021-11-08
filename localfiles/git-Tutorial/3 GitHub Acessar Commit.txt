@@ -3,7 +3,7 @@
 $git checkout 'Hash do commit sem aspas' 'arquivos que você quer copiar sem aspas'
 (pode-se usar um ponto (.) para dizer que quer copiar todos os arquivos)
 -Para acessar um commit do GitHub você deve usar o comando:
-$git clone 'link do repositório sem aspas' 'hash do commit sem aspas'
+$git clone 'link do repositório sem aspas'
 (O link do repositório deve ser o mesmo para onde está sendo enviado o commit. No GitHub você pode ver a hash do commit)
 -Uma hash de commit é o código do seu commit. Você pode ver esse código direto pelo GitHub ou usando o comando:
 $git log
