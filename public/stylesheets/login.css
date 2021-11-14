@@ -125,6 +125,17 @@ button{
     cursor: pointer;
 }
 
+button signup{
+    display: block;
+    margin: 0 auto;
+    width: 260px;
+    height: 36px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
 .img{
     overflow: hidden;
     z-index: 2;

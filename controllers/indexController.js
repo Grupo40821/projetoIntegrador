@@ -4,7 +4,10 @@ const indexController = {
 },
     login: function(req, res) {
       res.render('login', {});
-    }
+    },
+    partner: function(req, res) {
+      res.render('partner', {});
+    },
 }
 
 module.exports = indexController;
