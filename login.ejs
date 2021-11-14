@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faça seu login</title>
     <link rel="stylesheet" href="/stylesheets/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
 <body>
-    <%- include('./partials/nav.ejs') %>
     <div class="cont">
         <div class="form sign-in">
             <h2>Seja bem-vindo</h2>
@@ -125,34 +123,34 @@
             </div>
         </div>
     </div>
-    <%- include('./partials/footer.ejs') %>
+    
     <script>
         document.querySelector('.img__btn').addEventListener('click', function(){
             document.querySelector('.cont').classList.toggle('s--signup');
         });
         document.querySelector('#sign-up').addEventListener('click',function(){
-            document.querySelector('.sign-up-info').classList.remove('sign-up-1');
-            document.querySelector('.sign-up').classList.remove('sign-up-1');
-            document.querySelector('.sign-up-info').classList.add('sign-up-2');
-            document.querySelector('.sign-up').classList.add('sign-up-2')
+            document.querySelector('.sign-up-info').classList.toggle('fade-in2');
+        })
+        document.querySelector('#sign-up').addEventListener('click',function(){
+            document.querySelector('.sign-up').classList.toggle('fade-in');
         })
         document.querySelector('#sign-up-back').addEventListener('click',function(){
-            document.querySelector('.sign-up-info').classList.remove('sign-up-2');
-            document.querySelector('.sign-up').classList.remove('sign-up-2');
-            document.querySelector('.sign-up-info').classList.add('sign-up-1');
-            document.querySelector('.sign-up').classList.add('sign-up-1');
+            document.querySelector('.sign-up-info').classList.toggle('fade-in2');
+        })
+        document.querySelector('#sign-up-back').addEventListener('click',function(){
+            document.querySelector('.sign-up').classList.toggle('fade-in');
         })
         document.querySelector('#sign-up-info').addEventListener('click',function(){
-            document.querySelector('.sign-up-info.sign-up-2').classList.remove('sign-up-2');
-            document.querySelector('.sign-up-info-second').classList.remove('sign-up-2');
-            document.querySelector('.sign-up-info-second').classList.add('sign-up-3');
-            document.querySelector('.sign-up-info').classList.add('sign-up-3');
+            document.querySelector('.sign-up-info-second').classList.toggle('fade-in3');
+        })
+        document.querySelector('#sign-up-info').addEventListener('click',function(){
+            document.querySelector('.sign-up-info.fade-in2').classList.toggle('fade-in4');
         })
         document.querySelector('#sign-up-back-second').addEventListener('click',function(){
-            document.querySelector('.sign-up-info-second').classList.remove('sign-up-3');
-            document.querySelector('.sign-up-info').classList.remove('sign-up-3');
-            document.querySelector('.sign-up-info').classList.add('sign-up-2');
-            document.querySelector('.sign-up-info-second').classList.add('sign-up-2');
+            document.querySelector('.sign-up-info-second').classList.toggle('fade-in3');
+        })
+        document.querySelector('#sign-up-back-second').addEventListener('click',function(){
+            document.querySelector('.sign-up-info').classList.toggle('fade-in4');
         })
     </script>
 
