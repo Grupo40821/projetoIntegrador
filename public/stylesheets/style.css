@@ -23,7 +23,7 @@ display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: #4475e2;
-  z-index: 1;
+  z-index: 99;
 }
 
 header .logo img{
@@ -64,12 +64,12 @@ label{
 
 .content{
   position: relative;
-  width: 100%;
+  width: 80vw;
 display: flex;
   justify-content:space-between ;
   align-items: center;
   margin-left: 15px;
-
+  z-index: 2;
 }
 
 .content .textBox{
@@ -82,7 +82,6 @@ display: flex;
  font-size: 4em ;
  line-height: 1.4em;
  font-weight: 500;
- margin-top: 180px;
 }
 
 .content .textBox h2 span{
@@ -101,12 +100,12 @@ display: flex;
   display: flex;
   justify-content: flex-end;  
   padding-right: 0 ;
-  margin-top: 80px;
+  align-self: flex-start;
 }
 .content .spanBox h2{
-  margin-top: 50%;
   font-size: 70px;
   color: #000;
+  align-self: flex-start;
 }
 
 .content .spanBox h2 span{
@@ -145,12 +144,12 @@ display: flex;
 }
 
 .social-media{
-  transform: translateY(80px) translateX(30px);
+  align-self: center;
 }
 
 .social-media i{
   font-size: 35px;
-  border: solid 2px #000;
+  border: solid 2px white;
   width: 60px;
   height: 60px;
   text-align: center;
@@ -159,24 +158,83 @@ display: flex;
   transition: all .3s;
   border-radius: 50%;
  margin-left: 10px;
+ color: white;
 }
 
 .social-media i:hover{
   background: #4475e2;
   color: #fff;
   transform: translateY(5px);
-
-
 }
 .circle{
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background: #4475e2;
-  clip-path: circle(650px at right 800px);
-
+  clip-path: circle(800px at right 800px);
 }
 
+#servicos {
+  width: 80vw;
+  height: unset;
+  z-index: 2;
+  color: black;
+  margin-top: 10vw;
+}
+
+#servicos p {
+  font-size: 20px;
+}
+
+#servicos h1 {
+  font-size: 3.5em;
+  color: #4475e2;
+  font-weight: 900;
+}
+
+footer {
+  position: absolute;
+  top: 100%;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60%;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: auto;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.footer-contact h1, .footer-contact h2{
+  width: auto;
+  font-size: 22px;
+}
+
+.footer-contact hr {
+  width: 25px;
+  height: 1px;
+  margin: 0 10px;
+}
+
+.direitos {
+  font-size: 22px;
+  margin-left: 20px;
+}
 
 
 
@@ -191,6 +249,7 @@ display: flex;
   header .navigation{
       display: none;
   }
+
   label{
       display: block;
       font-size: 25px;
@@ -201,79 +260,85 @@ display: flex;
       width: 25px;
   }
 
+  label:hover{
+    color: #fff;
+  }
 
-label:hover{
-  color: #fff;
-}
-
-label .close-btn{
+  label .close-btn{
   display: none;
-}
-#check:checked ~ header .navigation{
-  z-index: 2;
-  position: fixed;
-  background: rgba(114, 223, 255, 0.9);
-  top:0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#check:checked ~ header .navigation a{
-  font-weight:700 ;
-  margin-right: 0;
-  margin-bottom: 50px;
-  letter-spacing: 2px;
-}
-#check:checked ~ header label .menu-btn{
-  display: none;
-}
-#check:checked ~ header label .close-btn{
-  z-index: 2;
-  display: block;
-  position: fixed;
-}
+  }
 
-label .menu-btn{
-  position: absolute;
-  
-}
-.content .textBox h2{
-  font-size: 45px;
-  line-height: 50px;
-}
-.content .textBox h2 span{
-  font-size: 40px;
-  font-weight: 600;
-  color: black;
-}
+  #check:checked ~ header .navigation{
+    z-index: 2;
+    position: fixed;
+    background: rgba(114, 223, 255, 0.9);
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.content .textBox p{
-  font-size: 14px;
-  margin-right: 45px;
+  #check:checked ~ header .navigation a{
+    font-weight:700 ;
+    margin-right: 0;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+  }
 
-}.content .spanBox h2{
-  font-size: 45px;
-  line-height: 50px;
-}
-.content .spanBox h2 span{
-  font-size: 40px;
-  font-weight: 600;
-  color: #fff;
-}
-.social-media{
-  position: relative;
-  margin-bottom: -245;
-  
+  #check:checked ~ header label .menu-btn{
+    display: none;
+  }
 
+  #check:checked ~ header label .close-btn{
+    z-index: 2;
+    display: block;
+    position: fixed;
+  }
 
-}
+  label .menu-btn{
+    position: absolute;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .content .textBox {
+    align-self: flex-start;
+  }
+
+  .content .textBox h2{
+    font-size: 45px;
+    line-height: 50px;
+  }
+
+  .content .textBox h2 span{
+    font-size: 40px;
+    font-weight: 600;
+    color: black;
+  }
+
+  .content .spanBox {
+    align-self: flex-end;
+  }
+
+  .content .spanBox h2{
+    font-size: 45px;
+    line-height: 50px;
+  }
+
+  .content .spanBox h2 span{
+    font-size: 40px;
+    font-weight: 600;
+  }
+
 .thumb{
   position: absolute;
-
   left:  50%;
   bottom: 25%;
   transform: translateX(-50%);
@@ -288,11 +353,36 @@ label .menu-btn{
   cursor: pointer;
   padding: 20px;
   margin-left: 20px;
-
+}
+#servicos {
+  display: flex;
+  flex-direction: column;
+}
+#servicos h1 {
+  align-self: center;
+  color: black;
+}
+footer {
+  justify-content: space-between;
 }
 
+.footer-container {
+  justify-content: space-around;
 }
 
+.footer-contact {
+  flex-direction: column;
+  line-height: 30px;
+}
+.social-media { 
+  flex-wrap: wrap;
+  width: 160px;
+}
+
+.social-media i{
+  margin-bottom: 10px;
+}
+}
 
 @media (max-width:560px){
   .content .textBox h2{
@@ -305,15 +395,54 @@ label .menu-btn{
 }
 
 .content .textBox p{
-  font-size: 14px;
+  font-size: 20px;
 }
 .content .spanBox h2{
+  display: flex;
+  flex-direction: column;
   font-size: 35px;
   line-height: 40px;
 }
 .content .spanBox h2 span{
   font-size: 30px;
   font-weight: 600;
+  align-self: center;
+}
+.content .spanBox {
+  align-self: center;
+}
+.content .textBox {
+  align-self: center;
 }
 
+#servicos {
+  height: unset;
+  padding-bottom: 0;
+}
+#servicos h1{
+  font-size: 2em;
+  align-self: flex-start;
+}
+
+footer {
+  justify-content: space-between;
+}
+
+.footer-container {
+  justify-content: space-around;
+}
+
+.footer-contact {
+  flex-direction: column;
+  line-height: 40px;
+}
+.social-media {
+  display: flex;
+  flex-direction: column;
+  width: 70px;
+}
+.social-media i {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
 }

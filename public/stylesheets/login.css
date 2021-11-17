@@ -444,38 +444,71 @@ a{
     color: blue;
 }
 
-.footer-container {
+footer {
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     background-color: black;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .footer-container {
     color: white;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
-
-.footer-contact {
+    width: 60%;
+  }
+  
+  .footer-contact {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: auto;
     margin-top: 10px;
     margin-left: 20px;
-}
-
-.footer-contact h1, .footer-contact h2{
+  }
+  
+  .footer-contact h1, .footer-contact h2{
     width: auto;
     font-size: 22px;
-}
-
-.footer-contact hr {
+  }
+  
+  .footer-contact hr {
     width: 25px;
     height: 1px;
     margin: 0 10px;
-}
-
-.direitos {
+  }
+  
+  .direitos {
     font-size: 22px;
     margin-left: 20px;
-}
+  }
+
+  .social-media{
+    align-self: center;
+  }
+
+  .social-media i{
+    font-size: 35px;
+    border: solid 2px white;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .3s;
+    border-radius: 50%;
+   margin-left: 10px;
+   color: white;
+  }
+  
+  .social-media i:hover{
+    background: #4475e2;
+    color: #fff;
+    transform: translateY(5px);
+  }
 
 @media (max-width: 920px) {
     .form {
@@ -508,6 +541,26 @@ a{
     .cont.s--signup .sign-in{
         transform: translate3d(30vw,0 ,0);
     }
+    footer {
+        justify-content: space-between;
+      }
+      
+      .footer-container {
+        justify-content: space-around;
+      }
+      
+      .footer-contact {
+        flex-direction: column;
+        line-height: 30px;
+      }
+      .social-media { 
+        flex-wrap: wrap;
+        width: 160px;
+      }
+      
+      .social-media i{
+        margin-bottom: 10px;
+      }
 }
 
 @media (max-width: 650px){
@@ -629,12 +682,25 @@ a{
         transform: translate3d(-95vw, 0, 0);
         transition: transform 1.2s;
     }
-    .footer-contact {
+    footer {
+        justify-content: space-between;
+      }
+      
+      .footer-container {
+        justify-content: space-around;
+      }
+      
+      .footer-contact {
+        flex-direction: column;
+        line-height: 40px;
+      }
+      .social-media {
         display: flex;
         flex-direction: column;
-    }
-    .footer-contact hr {
-        width: 200px;
-        margin: 10px 0;
-    }
+        width: 70px;
+      }
+      .social-media i {
+        margin-left: 0;
+        margin-bottom: 10px;
+      }
 }
