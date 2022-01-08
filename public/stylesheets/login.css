@@ -47,7 +47,11 @@ header .navigation a:hover{
     display: none;
 }
 #logo{
-    width: unset;
+    width: 100px;
+    height: 50px;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-size: 100px 50px;
 }
 
 body{
@@ -157,7 +161,7 @@ button signup{
     background-image: url("/images/fundoLogin.jpg");
     opacity: .8;
     background-size: cover;
-    transition: transform 1.2s ease-in-out;
+    transition: transform 1.2s;
 }
 
 .img:after{
@@ -210,8 +214,8 @@ button signup{
 
 .img__btn{
     overflow: hidden;
-    z-index: 2;
-    position: relative;
+    z-index: 3;
+    position: absolute;
     width: 100px;
     height: 36px;
     margin: 0 auto;
@@ -220,11 +224,15 @@ button signup{
     text-transform: uppercase;
     font-size: 15px;
     cursor: pointer;
+    left: 720px;
+    bottom: 154px;
+    transform: translate3d(0px, 0, 0);
+    transition: transform 1.2s;
 }
 
 .img__btn:after{
     content: '';
-    z-index: 2;
+    z-index: 3;
     position: absolute;
     left: 0;
     top: 0;
@@ -256,6 +264,10 @@ button signup{
 
 .cont.s--signup .img__btn span.m--up{
     transform: translateY(72px);
+}
+.cont.s--signup .img__btn{
+    transform: translate3d(-640px, 0, 0);
+    transition: transform 1.2s;
 }
 
 h2{
@@ -528,6 +540,16 @@ footer {
     .cont {
       width: 90vw;
     }
+    .img__btn{
+        left: 77%;
+    }
+    .cont.s--signup .img__btn {
+        transform: translate3d(-60vw, 0, 0);
+        transition: transform 1.2s;
+    }
+    .formSignUp{
+        width: 90vw;
+    }
     .sub-cont {
       width: 90vw;
       left: 60vw;
@@ -640,57 +662,72 @@ footer {
 @media (max-width: 530px) {
     .form.sign-up, .form.sign-up-info, .form.sign-up-info-second, .form.sign-in{
         width: 90vw;
-        box-shadow: inset 0px 0px 10px lightgray, 0px 0px 20px gray;
     }
-    .img__text {
-        display: none;
-    }
-    .img::before {
-        background: none;
-        width: 90vw;
-        opacity: 0;
-    }
-    .img::after{
-        background: none;
-        width: 90vw;
-        opacity: 0;
+    .form.sign-in{
+        box-shadow: inset 0px 0px 10px lightgrey, 0px 0px 20px grey;
+        border-radius: 20px;
     }
     .sub-cont .img {
-        width: 30vw;
-        margin-left: 60vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+        display:none;
     }
     .cont {
         height: 600px;
+        margin: 20px 0px 20px 0px;
+        align-self: center;
     }
-    .img__btn {
+    .cont .img__btn {
         color: gray;
         margin-bottom: 20px;
+        top: -10vw;
+        left: 0vw;
+        position: relative;
+        transform: translate3d(30vw, 0, 0);
+        transition: transform 1.2s;
+    }
+    .cont.s--signup .img__btn {
+        top: -10vw;
+        position: relative;
+        transform: translate3d(-30vw, 0, 0);
+        transition: transform 1.2s;
     }
     .img__btn:after{
         border-color: gray;
     }
     .sub-cont {
+        border-radius: 20px;
         background: transparent;
-        width: 150vw;
+        width: 90vw;
         padding-left: 0;
         left: 0;
+        transform: translate3d(-95vw, 0, 0);
+        transition: transform 1.2s;
+        box-shadow: inset 0px 0px 10px lightgrey, 0px 0px 20px grey;
+    }
+    .cont.s--signup .sub-cont {
+        transform: translate3d(0vw, 0, 0);
+        transition: transform 1.2s;
     }
     .cont.s--signup .sign-in{
+        transform: translate3d(0 ,0 ,0);
+        transition: transform 1.2s;
+    }
+    .cont.s--signup .formSignIn {
         transform: translate3d(95vw,0 ,0);
         transition: transform 1.2s;
     }
-    .sign-in{
+    .sign-in, .formSignIn{
         transition: transform 1.2s;
     }
     .cont.s--signup .form.sign-up, .cont.s--signup .form.sign-up-info, .cont.s--signup .form.sign-up-info-second{
-        transform: translate3d(60vw,0,0);
+        transform: translate3d(0vw,0,0);
         transition: transform 1.2s;
     }
     .sign-up, .form.sign-up-info, .form.sign-up-info-second{
-        transform: translate3d(-95vw, 0, 0);
+        transform: translate3d(0vw, 0, 0);
+        transition: transform 1.2s;
+    }
+    .cont.s--signup .form.sign-up, .cont.s--signup .form.sign-up-info, .cont.s--signup .form.sign-up-info-second {
+        transform: translate3d(0,0,0);
         transition: transform 1.2s;
     }
     footer {

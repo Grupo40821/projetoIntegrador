@@ -11,6 +11,7 @@
 <body>
     <%- include('./partials/nav.ejs') %>
     <div class="cont">
+      <form style='height: 100%;' action="/login/signIn" method="POST" class='formSignIn'>
         <div class="form sign-in">
             <h2>Seja bem-vindo</h2>
             <label for="">
@@ -25,8 +26,19 @@
 
             <p class="forgot-pass"><a href="#">Esqueceu sua senha?</a></p>
             <button type="submit" class="submit">Entrar</button>
+            <% if(typeof(errors) != 'undefined') { %>
+              <div style='border: 2px#cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; overflow-y: scroll; height: 170px;'>
+                <p style='font-size: 20px; color: grey; align-self: center;'>Falha ao realizar login.</p>
+                <br>
+            <% for(i=0; i<errors.length; i++){ %>
+                <p style='color:grey; margin-left: 5%;'><%= errors[i].msg%></p>
+            <% } %> </div> <% } %>
         </div>
-
+      </form>
+        <div class="img__btn">
+          <span class="m--up">Cadastrar</span>
+          <span class="m--in">Entrar</span>
+        </div>
         <div class="sub-cont">
             <div class="img">
                 <div class="img__text m--up">
@@ -38,13 +50,8 @@
                     <h2>Já é um dos nossos?</h2>
                     <p>Se já tem uma conta, apenas acesse o botão abaixo e entre com seu e-mail e senha</p>
                 </div>
-
-                <div class="img__btn">
-                    <span class="m--up">Cadastrar</span>
-                    <span class="m--in">Entrar</span>
-                </div>
             </div>
-            <form action="/login/signUp" method="POST">
+            <form action="/login/signUp" method="POST" class='formSignUp'>
             <div class="form sign-up">
                 <h2>Sinta-se em casa</h2>
                 <label for="name">
@@ -63,8 +70,8 @@
                 </label>
                 
                 <label class="tipo">
-                    <input type="radio" name="tipo" value="usuario" class='user'>Usuário
-                    <input type="radio" name="tipo" value="motorista" class='driver'>Motorista
+                    <input type="radio" name="tipo" value="usuario" class='user'>Usuário;
+                    <input type="radio" name="tipo" value="motorista" class='driver'>Motorista;
                 </label>
 
                 <button type="button" class="submit" id='sign-up'>Cadastrar</button>
@@ -80,7 +87,7 @@
                 
                 <label for="">
                     <span>CPF</span>
-                    <input type="number" name="cpf">
+                    <input type="text" name="cpf">
                 </label>
 
                 <label for="">
