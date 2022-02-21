@@ -40,8 +40,10 @@ let validarCadastro = [
         .notEmpty().withMessage('* Os termos devem ser aceitos para utilizar a plataforma.'),
 ]
 
+const modelo = require('../models')
 /* GET users listing. */
 router.get('/', indexController.login);
 router.post('/signUp', validarCadastro, indexController.signUp);
 router.post('/signIn', validarLogin, indexController.signIn);
+router.get('/teste', indexController.teste);
 module.exports = router;

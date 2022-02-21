@@ -25,6 +25,10 @@ const indexController = {
     } else {
       res.render('login', {estados: estados, errors: problema.errors})
     }
+  },
+  teste: (req,res)=>{
+    const modelo = require('../models');
+    modelo.Usuario.findByPk(1).then(model=>console.log(model))
   }
 }
 
