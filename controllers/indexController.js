@@ -1,6 +1,5 @@
 const signUpFunction = require('../localfiles/functions/signUpFunction');
 const signInFunction = require('../localfiles/functions/signInFunction');
-const estados = require('../localfiles/EstadoCidade/estadosCidades');
 const { validationResult } = require('express-validator');
 
 const indexController = {
@@ -8,14 +7,14 @@ const indexController = {
     res.render('index');
   },
   login: function(req, res) {
-    res.render('login', {estados: estados});
+    res.render('login', {valid: false});
   },
   signUp: (req, res)=>{
     let problema = validationResult(req)
     if(problema.isEmpty()){
       signUpFunction(req.body, req, res)
     } else {
-      res.render('login', {estados: estados, errors: problema.errors})
+      res.render('login', {errors: problema.errors, valid: true})
     }
   },
   signIn: (req, res)=>{
@@ -23,12 +22,8 @@ const indexController = {
     if(problema.isEmpty()){
       signInFunction(req.body, req, res)
     } else {
-      res.render('login', {estados: estados, errors: problema.errors})
+      res.render('login', {errors: problema.errors, estadosSrc: 'javascripts/seletorEstados.js', animacaoSrc: 'javascripts/animacaoLogin.js'})
     }
-  },
-  teste: (req,res)=>{
-    const modelo = require('../models');
-    modelo.Usuario.findByPk(1).then(model=>console.log(model))
   }
 }
 

@@ -1,0 +1,27 @@
+document.querySelector('.img__btn').addEventListener('click', function(){
+    document.querySelector('.cont').classList.toggle('s--signup');
+});
+document.querySelector('#sign-up').addEventListener('click',function(){
+    document.querySelector('.sign-up-info').classList.remove('sign-up-1');
+    document.querySelector('.sign-up').classList.remove('sign-up-1');
+    document.querySelector('.sign-up-info').classList.add('sign-up-2');
+    document.querySelector('.sign-up').classList.add('sign-up-2')
+})
+document.querySelector('#sign-up-back').addEventListener('click',function(){
+    document.querySelector('.sign-up-info').classList.remove('sign-up-2');
+    document.querySelector('.sign-up').classList.remove('sign-up-2');
+    document.querySelector('.sign-up-info').classList.add('sign-up-1');
+    document.querySelector('.sign-up').classList.add('sign-up-1');
+})
+document.querySelector('#sign-up-info').addEventListener('click',function(){
+    document.querySelector('.sign-up-info.sign-up-2').classList.remove('sign-up-2');
+    document.querySelector('.sign-up-info-second').classList.remove('sign-up-2');
+    document.querySelector('.sign-up-info-second').classList.add('sign-up-3');
+    document.querySelector('.sign-up-info').classList.add('sign-up-3');
+})
+document.querySelector('#sign-up-back-second').addEventListener('click',function(){
+    document.querySelector('.sign-up-info-second').classList.remove('sign-up-3');
+    document.querySelector('.sign-up-info').classList.remove('sign-up-3');
+    document.querySelector('.sign-up-info').classList.add('sign-up-2');
+    document.querySelector('.sign-up-info-second').classList.add('sign-up-2');
+})

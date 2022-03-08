@@ -1,8 +1,8 @@
 const estados = 
 [{
-      "sigla": "AC",
-      "nome": "Acre",
-      "cidades": [
+      sigla: "AC",
+      nome: "Acre",
+      cidades: [
         "Acrelândia",
         "Assis Brasil",
         "Brasiléia",
@@ -5720,6 +5720,42 @@ const estados =
         "Wanderlândia",
         "Xambioá"
       ]
-}]
+}];
 
-module.exports = estados;
+  let estadoSelect = document.getElementById("estado"); 
+  let cidadeSelect = document.getElementById("cidade"); 
+  for(var i = 0; i < estados.length; i++) {
+    var opt = document.createElement("option");
+    opt.textContent = estados[i].nome;
+    opt.value = estados[i].sigla;
+    estadoSelect.appendChild(opt)
+  }
+  let indexEstado;
+  let cidadesEstadoEscolhido;
+  let cidadesOpt;
+  document.querySelector('#estado').addEventListener('change',(event)=>{
+    cidadesEstadoEscolhido = undefined;
+    cidadesOpt = undefined;
+    cidadesOpt = cidadeSelect.children.length
+    for (i=0;i<cidadesOpt;i++){
+      cidadeSelect.remove(cidadeSelect.children)
+    }
+    let estadoEscolhido = event.target.value
+    estados.forEach((term)=>{
+      if (term.sigla == estadoEscolhido){
+        indexEstado = term.cidades
+      }
+    })
+    cidadesEstadoEscolhido = indexEstado
+    var opt = document.createElement("option");
+      opt.textContent = 'Selecione uma cidade';
+      opt.disabled = true;
+      opt.selected = true;
+      cidadeSelect.appendChild(opt)
+    for(var i = 0; i < cidadesEstadoEscolhido.length; i++) {
+      var opt = document.createElement("option");
+      opt.textContent = cidadesEstadoEscolhido[i];
+      opt.value = cidadesEstadoEscolhido[i];
+      cidadeSelect.appendChild(opt)
+    }
+  })

@@ -2,7 +2,7 @@ const tabela = require('../../models');
 const Usuario = require('../../models/Usuario');
 async function signUpFunction (parmBody, parmReq, parmRes) {
     let {name,emailSignUp,passwordSignUp,tipo,phone,cpf,rg,state,city,civilState} = parmBody;
-    if (tipo == 'usuario'){
+
     let userVerifyEmail,userVerifyPhone,userVerifyCpf,userVerifyRg
     await tabela.Usuario.findAll({where: {email: emailSignUp}}).then(userVarEmail=>userVerifyEmail=userVarEmail[0])
     await tabela.Usuario.findAll({where: {telefone: phone}}).then(userVarPhone=>userVerifyPhone=userVarPhone[0])
@@ -27,9 +27,10 @@ async function signUpFunction (parmBody, parmReq, parmRes) {
             rg: rg,
             estado: state,
             cidade: city,
-            estadoCivil: civilState
+            estadoCivil: civilState,
+            tipo: tipo
         })
-    }
+        parmRes.send('Cadastrado com sucesso')
     }
 }
 

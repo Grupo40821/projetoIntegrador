@@ -23,13 +23,13 @@ let validarCadastro = [
         .notEmpty().withMessage('* Você deve marcar se deseja se tornar usuário ou motorista.'),
     check("phone")
         .notEmpty().withMessage('* O campo telefone deve ser preenchido.')
-        .isLength({ min:10, max:11 }).withMessage('* Insira um número de telefone válido.'),
+        .isLength({ min:13, max:15 }).withMessage('* Insira um número de telefone válido.'),
     check("cpf")
         .notEmpty().withMessage('* O CPF nome deve ser preenchido.')
-        .isLength({ min:11, max:11 }).withMessage('* Insira CPF válido.'),
+        .isLength({ min:14, max:14 }).withMessage('* Insira CPF válido.'),
     check("rg")
         .notEmpty().withMessage('* O RG nome deve ser preenchido.')
-        .isLength({ min:8, max:12 }).withMessage('* Insira RG válido.'),
+        .isLength({ min:12, max:12 }).withMessage('* Insira RG válido.'),
     check("state")
         .notEmpty().withMessage('* O estado deve ser escolhido.'),
     check("city")
@@ -45,5 +45,4 @@ const modelo = require('../models')
 router.get('/', indexController.login);
 router.post('/signUp', validarCadastro, indexController.signUp);
 router.post('/signIn', validarLogin, indexController.signIn);
-router.get('/teste', indexController.teste);
 module.exports = router;

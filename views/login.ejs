@@ -82,17 +82,17 @@
                 <h2>Sinta-se em casa</h2>
                 <label for="">
                     <span>Telefone</span>
-                    <input type="tel" name="phone">
+                    <input type="tel" onkeypress="return onlynumber();" name="phone" id="phone">
                 </label>
                 
                 <label for="">
                     <span>CPF</span>
-                    <input type="text" name="cpf">
+                    <input type="text" onkeypress="return onlynumber();" name="cpf" id="cpf">
                 </label>
 
                 <label for="">
-                    <span>Documento de Identificação</span>
-                    <input type="number" name="rg">
+                    <span>Documento de Identificação (RG)</span>
+                    <input type="text" onkeypress="return onlynumber();" name="rg" id="rg">
                 </label>
 
                 <label for="attachment" class='attachment-label'>
@@ -143,181 +143,34 @@
         </div>
     </div>
     <%- include('./partials/footer.ejs') %>
+    <% if(valid = false) {%>
+    <script src='javascripts/animacaoLogin.js'></script>
+    <script src='javascripts/seletorEstados.js'></script>
+    <% } else if (valid = true) { %>
+    <script src='../javascripts/animacaoLogin.js'></script>
+    <script src='../javascripts/seletorEstados.js'></script>
+    <% } %>
     <script>
-        document.querySelector('.img__btn').addEventListener('click', function(){
-            document.querySelector('.cont').classList.toggle('s--signup');
-        });
-        document.querySelector('#sign-up').addEventListener('click',function(){
-            document.querySelector('.sign-up-info').classList.remove('sign-up-1');
-            document.querySelector('.sign-up').classList.remove('sign-up-1');
-            document.querySelector('.sign-up-info').classList.add('sign-up-2');
-            document.querySelector('.sign-up').classList.add('sign-up-2')
-        })
-        document.querySelector('#sign-up-back').addEventListener('click',function(){
-            document.querySelector('.sign-up-info').classList.remove('sign-up-2');
-            document.querySelector('.sign-up').classList.remove('sign-up-2');
-            document.querySelector('.sign-up-info').classList.add('sign-up-1');
-            document.querySelector('.sign-up').classList.add('sign-up-1');
-        })
-        document.querySelector('#sign-up-info').addEventListener('click',function(){
-            document.querySelector('.sign-up-info.sign-up-2').classList.remove('sign-up-2');
-            document.querySelector('.sign-up-info-second').classList.remove('sign-up-2');
-            document.querySelector('.sign-up-info-second').classList.add('sign-up-3');
-            document.querySelector('.sign-up-info').classList.add('sign-up-3');
-        })
-        document.querySelector('#sign-up-back-second').addEventListener('click',function(){
-            document.querySelector('.sign-up-info-second').classList.remove('sign-up-3');
-            document.querySelector('.sign-up-info').classList.remove('sign-up-3');
-            document.querySelector('.sign-up-info').classList.add('sign-up-2');
-            document.querySelector('.sign-up-info-second').classList.add('sign-up-2');
-        })
-        let estados = [{
-      sigla: '<%=estados[0].sigla%>',
-      nome: '<%=estados[0].nome%>',
-      cidades: '<%=estados[0].cidades%>'
-    },{
-      sigla: '<%=estados[1].sigla%>',
-      nome: '<%=estados[1].nome%>',
-      cidades: '<%=estados[1].cidades%>'
-    },{
-      sigla: '<%=estados[2].sigla%>',
-      nome: '<%=estados[2].nome%>',
-      cidades: '<%=estados[2].cidades%>'
-    },{
-      sigla: '<%=estados[3].sigla%>',
-      nome: '<%=estados[3].nome%>',
-      cidades: '<%=estados[3].cidades%>'
-    },{
-      sigla: '<%=estados[4].sigla%>',
-      nome: '<%=estados[4].nome%>',
-      cidades: '<%=estados[4].cidades%>'
-    },{
-      sigla: '<%=estados[5].sigla%>',
-      nome: '<%=estados[5].nome%>',
-      cidades: '<%=estados[5].cidades%>'
-    },{
-      sigla: '<%=estados[6].sigla%>',
-      nome: '<%=estados[6].nome%>',
-      cidades: '<%=estados[6].cidades%>'
-    },{
-      sigla: '<%=estados[7].sigla%>',
-      nome: '<%=estados[7].nome%>',
-      cidades: '<%=estados[7].cidades%>'
-    },{
-      sigla: '<%=estados[8].sigla%>',
-      nome: '<%=estados[8].nome%>',
-      cidades: '<%=estados[8].cidades%>'
-    },{
-      sigla: '<%=estados[9].sigla%>',
-      nome: '<%=estados[9].nome%>',
-      cidades: '<%=estados[9].cidades%>'
-    },{
-      sigla: '<%=estados[10].sigla%>',
-      nome: '<%=estados[10].nome%>',
-      cidades: '<%=estados[10].cidades%>'
-    },{
-      sigla: '<%=estados[11].sigla%>',
-      nome: '<%=estados[11].nome%>',
-      cidades: '<%=estados[11].cidades%>'
-    },{
-      sigla: '<%=estados[12].sigla%>',
-      nome: '<%=estados[12].nome%>',
-      cidades: '<%=estados[12].cidades%>'
-    },{
-      sigla: '<%=estados[13].sigla%>',
-      nome: '<%=estados[13].nome%>',
-      cidades: '<%=estados[13].cidades%>'
-    },{
-      sigla: '<%=estados[14].sigla%>',
-      nome: '<%=estados[14].nome%>',
-      cidades: '<%=estados[14].cidades%>'
-    },{
-      sigla: '<%=estados[15].sigla%>',
-      nome: '<%=estados[15].nome%>',
-      cidades: '<%=estados[15].cidades%>'
-    },{
-      sigla: '<%=estados[16].sigla%>',
-      nome: '<%=estados[16].nome%>',
-      cidades: '<%=estados[16].cidades%>'
-    },{
-      sigla: '<%=estados[17].sigla%>',
-      nome: '<%=estados[17].nome%>',
-      cidades: '<%=estados[17].cidades%>'
-    },{
-      sigla: '<%=estados[18].sigla%>',
-      nome: '<%=estados[18].nome%>',
-      cidades: '<%=estados[18].cidades%>'
-    },{
-      sigla: '<%=estados[19].sigla%>',
-      nome: '<%=estados[19].nome%>',
-      cidades: '<%=estados[19].cidades%>'
-    },{
-      sigla: '<%=estados[20].sigla%>',
-      nome: '<%=estados[20].nome%>',
-      cidades: '<%=estados[20].cidades%>'
-    },{
-      sigla: '<%=estados[21].sigla%>',
-      nome: '<%=estados[21].nome%>',
-      cidades: '<%=estados[21].cidades%>'
-    },{
-      sigla: '<%=estados[22].sigla%>',
-      nome: '<%=estados[22].nome%>',
-      cidades: '<%=estados[22].cidades%>'
-    },{
-      sigla: '<%=estados[23].sigla%>',
-      nome: '<%=estados[23].nome%>',
-      cidades: '<%=estados[23].cidades%>'
-    },{
-      sigla: '<%=estados[24].sigla%>',
-      nome: '<%=estados[24].nome%>',
-      cidades: '<%=estados[24].cidades%>'
-    },{
-      sigla: '<%=estados[25].sigla%>',
-      nome: '<%=estados[25].nome%>',
-      cidades: '<%=estados[25].cidades%>'
-    },{
-      sigla: '<%=estados[26].sigla%>',
-      nome: '<%=estados[26].nome%>',
-      cidades: '<%=estados[26].cidades%>'
-    },]
-    let estadoSelect = document.getElementById("estado"); 
-    let cidadeSelect = document.getElementById("cidade"); 
-    for(var i = 0; i < estados.length; i++) {
-      var opt = document.createElement("option");
-      opt.textContent = estados[i].nome;
-      opt.value = estados[i].sigla;
-      estadoSelect.appendChild(opt)
-    }
-    let indexEstado;
-    let cidadesEstadoEscolhido;
-    let cidadesOpt;
-    document.querySelector('#estado').addEventListener('change',(event)=>{
-      cidadesEstadoEscolhido = undefined;
-      cidadesOpt = undefined;
-      cidadesOpt = cidadeSelect.children.length
-      for (i=0;i<cidadesOpt;i++){
-        cidadeSelect.remove(cidadeSelect.children)
-      }
-      let estadoEscolhido = event.target.value
-      estados.forEach((term)=>{
-        if (term.sigla == estadoEscolhido){
-          indexEstado = term.cidades
+        function onlynumber(evt) {
+        var theEvent = evt || window.event;
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode( key );
+        //var regex = /^[0-9.,]+$/;
+        var regex = /^[0-9]+$/;
+        if( !regex.test(key) ) {
+            theEvent.returnValue = false;
+            if(theEvent.preventDefault) theEvent.preventDefault();
+            }
         }
-      })
-      cidadesEstadoEscolhido = indexEstado.split(',')
-      var opt = document.createElement("option");
-        opt.textContent = 'Selecione uma cidade';
-        opt.disabled = true;
-        opt.selected = true;
-        cidadeSelect.appendChild(opt)
-      for(var i = 0; i < cidadesEstadoEscolhido.length; i++) {
-        var opt = document.createElement("option");
-        opt.textContent = cidadesEstadoEscolhido[i];
-        opt.value = cidadesEstadoEscolhido[i];
-        cidadeSelect.appendChild(opt)
-      }
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script>
+    $(document).ready(function(){
+	$("#phone").mask("(99)99999-9999");
+	$("#cpf").mask("999.999.999-99");
+	$("#rg").mask("99.999.999-9");
     })
     </script>
-
 </body>
 </html>

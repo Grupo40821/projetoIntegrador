@@ -15,6 +15,7 @@ module.exports = (sequelize,DataType)=>{
         cidade: DataType.STRING,
         estadoCivil: DataType.STRING,
         imagem: DataType.STRING,
+        tipo: DataType.STRING
     },{
         tableName: 'usuario',
         timestamps: false
