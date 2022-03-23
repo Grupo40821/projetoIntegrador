@@ -7,7 +7,7 @@ const indexController = {
     res.render('index');
   },
   login: function(req, res) {
-    res.render('login', {valid: false});
+    res.render('login', {valid: false, signUp:false, credenciaisCadastro:false, cadastro: false, loginFail:false});
   },
   signUp: (req, res)=>{
     let problema = validationResult(req)

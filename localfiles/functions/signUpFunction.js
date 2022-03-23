@@ -9,13 +9,7 @@ async function signUpFunction (parmBody, parmReq, parmRes) {
     await tabela.Usuario.findAll({where: {cpf: cpf}}).then(userVarCpf=>userVerifyCpf=userVarCpf[0])
     await tabela.Usuario.findAll({where: {rg: rg}}).then(userVarRg=>userVerifyRg=userVarRg[0])
     if (userVerifyEmail != undefined){
-        parmRes.send('Email já cadastrado')
-    } else if (userVerifyPhone != undefined){
-        parmRes.send('Telefone já cadastrado')
-    } else if (userVerifyCpf != undefined){
-        parmRes.send('CPF já cadastrado')
-    } else if (userVerifyRg != undefined){
-        parmRes.send('RG já cadastrado')
+        parmRes.render('login', {signUp:false, credenciaisCadastro:true, cadastro: false, loginFail:false})
     } else {
         tabela.Usuario.create({
             id: null,
@@ -30,7 +24,7 @@ async function signUpFunction (parmBody, parmReq, parmRes) {
             estadoCivil: civilState,
             tipo: tipo
         })
-        parmRes.send('Cadastrado com sucesso')
+        parmRes.render('login', {signUp:true, credenciaisCadastro:false, cadastro: false, loginFail:false})
     }
 }
 

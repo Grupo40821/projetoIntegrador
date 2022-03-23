@@ -33,6 +33,30 @@
             <% for(i=0; i<errors.length; i++){ %>
                 <p style='color:grey; margin-left: 5%;'><%= errors[i].msg%></p>
             <% } %> </div> <% } %>
+            
+            <% if (signUp == true) { %>
+                <div style='border: 2px#cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; align-items: center;'>
+                    <p style='font-size: 26px; color: green;'>Usuário cadastrado com sucesso.</p>
+                </div>
+            <% } %>
+
+            <% if (credenciaisCadastro == true) { %>
+                <div style='border: 2px#cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; align-items: center;'>
+                    <p style='font-size: 26px; color: red;'>Credenciais já cadastradas.</p>
+                </div>
+            <% } %>
+
+            <% if (cadastro == true) { %>
+                <div style='border: 2px#cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; align-items: center;'>
+                    <p style='font-size: 26px; color: red;'>Usuário não encontrado</p>
+                </div>
+            <% } %>
+
+            <% if (loginFail == true) { %>
+                <div style='border: 2px#cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; align-items: center;'>
+                    <p style='font-size: 26px; color: red;'>Email e/ou senha invalidos.</p>
+                </div>
+            <% } %>
         </div>
       </form>
         <div class="img__btn">
@@ -82,17 +106,17 @@
                 <h2>Sinta-se em casa</h2>
                 <label for="">
                     <span>Telefone</span>
-                    <input type="tel" onkeypress="return onlynumber();" name="phone" id="phone">
+                    <input type="tel" onkeypress="onlynumber();" name="phone" id="phone">
                 </label>
                 
                 <label for="">
                     <span>CPF</span>
-                    <input type="text" onkeypress="return onlynumber();" name="cpf" id="cpf">
+                    <input type="text" onkeypress="onlynumber();" name="cpf" id="cpf">
                 </label>
 
                 <label for="">
                     <span>Documento de Identificação (RG)</span>
-                    <input type="text" onkeypress="return onlynumber();" name="rg" id="rg">
+                    <input type="text" onkeypress="onlynumber();" name="rg" id="rg">
                 </label>
 
                 <label for="attachment" class='attachment-label'>
