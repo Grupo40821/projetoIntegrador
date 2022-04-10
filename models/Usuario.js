@@ -20,5 +20,11 @@ module.exports = (sequelize,DataType)=>{
         tableName: 'usuario',
         timestamps: false
     })
+
+    Usuario.associate = (models) => {
+        Usuario.hasOne(models.MotoristasAtivos,
+          { foreignKey: 'id_motorista', as: 'atividade' });
+    };
+
     return Usuario
 }

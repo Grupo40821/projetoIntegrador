@@ -1,78 +1,76 @@
 <!DOCTYPE html>
 <html lang="pq-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="um bot que irá moderar e deixar sua comunidade segura">
-    <link rel="stylesheet" href="/stylesheets/motorista-logado.css">
-    <title>Pagina Usuario- S.O.S</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="um bot que irá moderar e deixar sua comunidade segura">
+        <link rel="stylesheet" href="/stylesheets/motorista-logado.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+        <title>Pagina Usuario- S.O.S</title>
+    </head>
+    <body>
+        <main>
+            <%- include('./partials/nav-signIn.ejs') %>
+            <section class="caixa1">
+                <div class="escrito">
+                    <h1>BEM-VINDO MOTORISTA!</h1>
+                    <h2>Como deseja realizar o seu serviço hoje?</h2>
+                </div>
+            </section>
+            <h1 id="ativo" style="display:none"><%= ativo %></h1>
+            <div class="corpo1">
+                <form action="/login/statusAlter" method="POST">
+                <div id='status'></div>
+                <div class="corpo2">
+                    <section class="caixa2">
+                            <div class="campo1">
+                                <h3>Você esta pronto para o trabalho?</h3>
+                                <label>
+                                    <input type="radio" name="motorista" value="online" checked>Online
+                                </label>
+                                <label>
+                                    <input type="radio" name="motorista" value="offline">Offline
+                                </label>
+                            </div>
 
-<body>
-
-<main>
-    <%- include('./partials/nav.ejs') %>
-    <section class="caixa1">
-        <div class="escrito">
-            <h1>BEM-VINDO MOTORISTA!</h1>
-            <h2>Como deseja realizar o seu serviço hoje?</h2>
-        </div>
-      
-    </section>
-<div class="corpo1">
-  
-    <div class="corpo2">
-
-    
-
-    <section class="caixa2">
-        <div class="campo1">
-            <label>você esta pronto para o trabalho?</label>
+                            <div class="campo2">
+                                <h3>Qual região você esta?<h3>
+                                    <select name='regiao' id="região">
+                                        <option selected disabled> Selecione</option>
+                                        <option value="zona1">ABC Paulista</option>
+                                        <option value="zona2">Região Metropolitana</option>
+                                        <option value="zona3">Interior de São Paulo</option>
+                                    </select>
+                            </div>
         
-            <label>
-                <input type="radio" nome="motorista" value="online" checked>Online
-            </label>
-            <label>
-                <input type="radio" nome="motorista" value="offline">Offline
-            </label>
-        </div>
+                            <div id="check">
+                                <h3>Selecione serviços que atende</h3>
 
-        <div class="campo2">
-            <label>Qual região você esta?<label>
-                 <select id="região">
-                     <option selected disabled value=""> Selecione</option>
-                     <option>ABC Paulista</option>
-                     <option>região metropolitana</option>
-                     <option>interior de São Paulo</option>
-                    </select>
-    
-         </div>
-        
+                                <br>
+                                <label for="Sreboque">
+                                    <input type="checkbox" id="Sreboque" name="reboque" value="true">Reboque
+                                </label>
 
-         <div id="check">
-            <label>Selecione serviços que atende</label>
-            <br>
-            <input type="checkbox" id="servico1" nome="servico1" value="Reboque">
-            <label for="servico1">Reboque</label>
-            <input type="checkbox" id="servico2" nome="servico2" value="troca de pneu">
-            <label for="servico2">Troca de pneu</label>
-            <input type="checkbox" id="servico3" nome="servico3" value="Carga de bateria">
-            <label for="servico3">Carga de bateria</label>
-            <input type="checkbox" id="servico4" nome="servico4" value="Possui serviço de patins">
-            <label for="servico4">Possui serviço de patins</label>
-        </div>
+                                <label for="Spneu">
+                                    <input type="checkbox" id="Spneu" name="pneu" value="true">Troca de pneu
+                                </label>
 
-        <button class="botao">concluido</button>
+                                <label for="Sbateria">
+                                    <input type="checkbox" id="Sbateria" name="bateria" value="true">Carga de bateria
+                                </label>
 
+                                <label for="Spatins">
+                                    <input type="checkbox" id="Spatins" name="patins" value="true">Possui serviço de patins
+                                </label>
+                            </div>
 
-
-    </section>
-    </div>
-    <img src="Mate.webp" alt="image mate" class="tomate">
-</div>
-<%- include('./partials/footer.ejs') %>
-</main>
-
-</body>
-
+                            <button type="submit" class="botao">Concluido</button>
+                    </section>
+                </div>
+                </form>
+            </div>
+            <%- include('./partials/footer.ejs') %>
+            <script src="../javascripts/statusMotorista.js"></script>
+        </main>
+    </body>
 </html>

@@ -16,18 +16,18 @@
             <h2>Seja bem-vindo</h2>
             <label for="">
                 <span>E-mail</span>
-                <input type="email" name="emailSignIn">
+                <input type="email" name="emailSignIn" required>
             </label>
 
             <label for="">
                 <span>Senha</span>
-                <input type="password" name="passwordSignIn">
+                <input type="password" name="passwordSignIn" required>
             </label>
 
             <p class="forgot-pass"><a href="#">Esqueceu sua senha?</a></p>
             <button type="submit" class="submit">Entrar</button>
             <% if(typeof(errors) != 'undefined') { %>
-              <div style='border: 2px#cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; overflow-y: scroll; height: 170px;'>
+              <div style='border: 2px #cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; overflow-y: scroll; height: 170px;'>
                 <p style='font-size: 20px; color: grey; align-self: center;'>Falha ao realizar login.</p>
                 <br>
             <% for(i=0; i<errors.length; i++){ %>
@@ -35,25 +35,25 @@
             <% } %> </div> <% } %>
             
             <% if (signUp == true) { %>
-                <div style='border: 2px#cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; align-items: center;'>
+                <div style='border: 2px #cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; align-items: center;'>
                     <p style='font-size: 26px; color: green;'>Usuário cadastrado com sucesso.</p>
                 </div>
             <% } %>
 
             <% if (credenciaisCadastro == true) { %>
-                <div style='border: 2px#cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; align-items: center;'>
+                <div style='border: 2px #cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; align-items: center;'>
                     <p style='font-size: 26px; color: red;'>Credenciais já cadastradas.</p>
                 </div>
             <% } %>
 
             <% if (cadastro == true) { %>
-                <div style='border: 2px#cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; align-items: center;'>
+                <div style='border: 2px #cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; align-items: center;'>
                     <p style='font-size: 26px; color: red;'>Usuário não encontrado</p>
                 </div>
             <% } %>
 
             <% if (loginFail == true) { %>
-                <div style='border: 2px#cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; align-items: center;'>
+                <div style='border: 2px #cfcfcf solid;border-radius: 10px; display: flex; flex-direction: column; align-items: center;'>
                     <p style='font-size: 26px; color: red;'>Email e/ou senha invalidos.</p>
                 </div>
             <% } %>

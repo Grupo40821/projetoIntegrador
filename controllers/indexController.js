@@ -1,13 +1,17 @@
 const signUpFunction = require('../localfiles/functions/signUpFunction');
 const signInFunction = require('../localfiles/functions/signInFunction');
+const alocarMotoristas = require('../localfiles/functions/atividadeMotoristas');
 const { validationResult } = require('express-validator');
 
 const indexController = {
   index: function(req, res, next) {
     res.render('index');
   },
+  conta: (req, res, next)=>{
+    res.render('minha-conta', {usuario: req.session.usuario, ativo: req.session.atividade})
+  },
   login: function(req, res) {
-    res.render('login', {valid: false, signUp:false, credenciaisCadastro:false, cadastro: false, loginFail:false});
+    res.render('login', {valid: false, signUp: false, credenciaisCadastro:false, cadastro: false, loginFail:false});
   },
   signUp: (req, res)=>{
     let problema = validationResult(req)
@@ -24,6 +28,9 @@ const indexController = {
     } else {
       res.render('login', {errors: problema.errors, estadosSrc: 'javascripts/seletorEstados.js', animacaoSrc: 'javascripts/animacaoLogin.js'})
     }
+  },
+  statusAlter: (req, res)=>{
+    alocarMotoristas(req.body, req, res);
   }
 }
 

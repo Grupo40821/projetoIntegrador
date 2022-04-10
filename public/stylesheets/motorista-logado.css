@@ -8,6 +8,54 @@
     text-decoration: none;
 }
 
+header{
+    font-family:"Poppins", sans-serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #238AEA;
+    z-index: 99;
+}
+  
+header .logo img{
+    max-width: 100px;
+}
+
+header .navigation a{
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 2px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+    transition-property: background ;
+    margin-right: 15px;
+  
+}
+ 
+header .navigation a:hover{
+    background: #fff;
+}
+
+#nav-label{
+    display: none;
+}
+#check{
+    z-index: 3;
+    display: none;
+}
+#logo{
+    width: 100px;
+    height: 50px;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-size: 100px 50px;
+}
 
 body{
     font-size: 100%;
@@ -18,23 +66,19 @@ body{
 .caixa1{
     display: flex;
     margin-left: 10%;
-   
 }
 
 .caixa1 .escrito{
-display: flex;
-flex-direction: column;
-gap: 32px;
-
-
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
 }
 .caixa1 .escrito h1{
-font-family: 'Righteous', cursive;
-color: #000;
-font-weight: 400;
-font-size: 64px;
+    font-family: 'Righteous', cursive;
+    color: #000;
+    font-weight: 400;
+    font-size: 64px;
 }
-
 .caixa1 .escrito h2{
     font-family: 'Sarala', sans-serif;
     font-weight: 400;
@@ -42,29 +86,35 @@ font-size: 64px;
     color: #000;
     font-family: 'Sarala', sans-serif;
 }
-
-.corpo1 .tomate{
-    height: 400px;
-}
 .corpo1{
-    margin-top: 9%;
+    margin-top: 50px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-  
+    justify-content: center;  
 }
+form{
+    display: flex;
+    flex-direction: column;
+}
+#status {
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    width: 120px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
 
+}
 .corpo2{
     width: 500px;
     padding: 50px;
-    margin-left: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     border: solid 2px #fff;
     border-radius: 30px;
-    
-    }
-    
-
+}
 .caixa2{
     display: flex;
     flex-direction: column;
@@ -73,20 +123,25 @@ font-size: 64px;
     margin-left: 10%;
     font-family: 'Sarala', sans-serif;
 }
-
 .caixa2 .campo1{
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-family: 'Sarala', sans-serif;
 }
+.caixa2 .campo2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .caixa2 .campo2 label{
- display: block;
+    display: block;
 }
-
 .caixa2 #check{
-display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 .botao{
     background-color:#fff;
     width: 180px;
@@ -95,11 +150,69 @@ display: inline-block;
     box-shadow: 4px 5px 4px rgba(0,0,0,0.25);
     border-radius: 20px;
     font-family: 'Sarala', sans-serif;
-
+    align-self: center;
+    cursor: pointer;
 }
-
 .botao:hover{
     background: #fff;
     color: #238AEA;
     box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
+}
+footer {
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    font-family: "Poppins", sans-serif;
+}  
+.footer-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60%;
+  }
+  
+.footer-contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: auto;
+    margin-top: 10px;
+    margin-left: 20px;
+}  
+.footer-contact h1, .footer-contact h2{
+    width: auto;
+    font-size: 22px;
+}  
+.footer-contact hr {
+    width: 25px;
+    height: 1px;
+    margin: 0 10px;
+}  
+.direitos {
+    font-size: 22px;
+    margin-left: 20px;
+}
+.social-media{
+    align-self: center;
+}
+.social-media i{
+    font-size: 35px;
+    border: solid 2px white;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .3s;
+    border-radius: 50%;
+    margin-left: 10px;
+    color: white;
+}  
+.social-media i:hover{
+    background: #4475e2;
+    color: #fff;
+    transform: translateY(5px);
 }
