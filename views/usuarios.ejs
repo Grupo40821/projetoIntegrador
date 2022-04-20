@@ -7,10 +7,71 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
    <link rel= "stylesheet" href="/stylesheets/usuarios.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-  
 </head>
 <body>
     <%- include('./partials/nav-signin.ejs') %>
+    <div id='divMotorista'>
+        <button id='btnLeft'class="driverBtn" ><h1><</h1></button>
+        <div id="driverContainer">
+            <button id='btnClose'>X</button>
+            <div id="content"></div>
+        </div>
+        <button id='btnRight' class="driverBtn"><h1>></h1></button>
+    </div>
+    <main>
+        
+        <p id="verify" style="display: none;"><%= findVerify %></p>
+
+        <% for (i=0; i<motoristas.length; i++) { %>
+            <p class='verifyName' id="nome<%=i%>" style="display: none;"><%= motoristas[i].nome %></p>
+            <p class='verifyPhone' id="tel<%=i%>" style="display: none;"><%= motoristas[i].telefone %></p>
+        <% } %>
+
+        <div class="escritas">
+            <h1 id="escritoH1">BEM-VINDO USUÁRIO!</h1>
+            <h2 id="escritoH2">Do que você precisa hoje?</h2>
+        </div>
+        <br><br>
+
+        <div class="userContainer">
+            <form action="/login/findDriver" method="post" id='formUser'>
+                <h3 id="textOne">Do que você precisa hoje?</h3>
+                <br><br>
+                <div id="formPartOne">
+                    <h3>Qual região você está?</h3>
+                    <select name='regiao' id="região">
+                        <option selected disabled> Selecione</option>
+                        <option value="zona1" selected>ABC Paulista</option>
+                        <option value="zona2">Região Metropolitana</option>
+                        <option value="zona3">Interior de São Paulo</option>
+                    </select>
+                </div>
+                <br><br>
+                <div id="formPartTwo">
+                    <h3>Que tipo de serviço você precisa?</h3>
+                    <br>
+                    <label for="Sreboque">
+                        <input type="checkbox" id="Sreboque" name="reboque" value="true">Reboque
+                    </label>
+
+                    <label for="Spneu">
+                        <input type="checkbox" id="Spneu" name="pneu" value="true">Troca de pneu
+                    </label>
+
+                    <label for="Sbateria">
+                        <input type="checkbox" id="Sbateria" name="bateria" value="true">Carga de bateria
+                    </label>
+
+                    <label for="Spatins">
+                        <input type="checkbox" id="Spatins" name="patins" value="true">Possui serviço de patins
+                    </label>
+                    <br><br>
+                    <button type="submit" class="botao">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </main>
     <%- include('./partials/footer.ejs') %>
 </body>
+<script src="../javascripts/dadosMotoristas.js"></script>
 </html>

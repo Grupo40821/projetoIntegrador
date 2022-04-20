@@ -1,6 +1,7 @@
 const signUpFunction = require('../localfiles/functions/signUpFunction');
 const signInFunction = require('../localfiles/functions/signInFunction');
 const alocarMotoristas = require('../localfiles/functions/atividadeMotoristas');
+const findDriverFunction = require('../localfiles/functions/findDriver');
 const { validationResult } = require('express-validator');
 
 const indexController = {
@@ -31,6 +32,9 @@ const indexController = {
   },
   statusAlter: (req, res)=>{
     alocarMotoristas(req.body, req, res);
+  },
+  findDriver: (req, res)=>{
+    findDriverFunction(req.body, req, res);
   }
 }
 

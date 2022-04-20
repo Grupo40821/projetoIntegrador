@@ -46,4 +46,5 @@ router.get('/', indexController.login);
 router.post('/signUp', validarCadastro, indexController.signUp);
 router.post('/signIn', validarLogin, indexController.signIn);
 router.post('/statusAlter', indexController.statusAlter);
+router.post('/findDriver', indexController.findDriver);
 module.exports = router;
